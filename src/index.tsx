@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { advice } from './advice';
 import HomePage from './pages/HomePage';
 import api from './api';
+import { handle } from '@hono/node-server/vercel';
 
 const app = new Hono();
 app.route('/api', api);
@@ -30,3 +31,5 @@ serve({
   fetch: app.fetch,
   port,
 });
+
+export default handle(app);
