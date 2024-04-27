@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
-import { advice } from './advice';
-import ApiPage from './pages/ApiPage';
+import { advice } from './advice.js';
+import ApiPage from './pages/ApiPage.js';
 
 const api = new Hono();
 
@@ -9,7 +9,7 @@ api.get('/', (c) => {
 });
 
 api.get('/advice', (c) => {
-  const random = Math.floor(Math.random() * advice.length) + 1;
+  const random = Math.floor(Math.random() * advice.length);
   return c.json(advice[random]);
 });
 

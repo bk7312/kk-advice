@@ -1,5 +1,5 @@
 import type { FC } from 'hono/jsx';
-import Layout from './Layout';
+import Layout from './Layout.js';
 import { css } from 'hono/css';
 
 const ApiPage: FC = ({ maxAdvice }) => {
@@ -12,7 +12,7 @@ const ApiPage: FC = ({ maxAdvice }) => {
     <Layout title={title}>
       <main>
         <h2>{title}</h2>
-        <p>Usage:</p>
+        <h4>Usage:</h4>
         <p>
           <code>GET /api/advice</code> - Returns a random advice
         </p>
@@ -23,7 +23,7 @@ const ApiPage: FC = ({ maxAdvice }) => {
           <code>GET /api/advice/:id</code> - Returns a specific advice based on
           id (1 to {maxAdvice})
         </p>
-        <p>Example:</p>
+        <h4>Example:</h4>
         <p>
           Get advice with id = 7 by sending a <code>GET</code> request to{' '}
           <a href='/api/advice/7'>/api/advice/7</a> will return the following

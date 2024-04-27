@@ -1,14 +1,14 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
-import { advice } from './advice';
-import HomePage from './pages/HomePage';
-import api from './api';
+import { advice } from './advice.js';
+import HomePage from './pages/HomePage.js';
+import api from './api.js';
 
 const app = new Hono();
 app.route('/api', api);
 
 app.get('/', (c) => {
-  const random = Math.floor(Math.random() * advice.length) + 1;
+  const random = Math.floor(Math.random() * advice.length);
   const randomAdvice = advice[random];
 
   return c.html(<HomePage advice={randomAdvice} />);
