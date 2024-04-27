@@ -1,5 +1,5 @@
 import type { FC } from 'hono/jsx';
-import Layout from './Layout';
+import Layout from './Layout.js';
 import { css } from 'hono/css';
 
 const ApiPage: FC = ({ maxAdvice }) => {

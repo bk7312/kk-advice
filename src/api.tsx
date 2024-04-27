@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
-import { advice } from './advice';
-import ApiPage from './pages/ApiPage';
+import { advice } from './advice.js';
+import ApiPage from './pages/ApiPage.js';
 
 const api = new Hono();
 

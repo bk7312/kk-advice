@@ -1,6 +1,6 @@
 import type { FC } from 'hono/jsx';
-import Layout from './Layout';
-import { Advice } from '../advice';
+import Layout from './Layout.js';
+import { Advice } from '../advice.js';
 import { css } from 'hono/css';
 
 const HomePage: FC = ({ advice }) => {
