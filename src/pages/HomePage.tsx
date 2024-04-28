@@ -5,15 +5,34 @@ import { css } from 'hono/css';
 
 const HomePage: FC = ({ advice }) => {
   const title = "Kevin Kelly's Unsolicited Advice";
-  const adv: Advice = advice;
+  const adv = advice as Advice;
   const mainClass = css`
     display: flex;
     flex-direction: column;
     height: 100%;
   `;
+  const titleClass = css`
+    text-align: center;
+    text-wrap: balance;
+  `;
   const sourceClass = css`
     font-size: 1rem;
     text-align: end;
+    word-break: break-word;
+  `;
+  const linkClass = css`
+    margin: 1em auto;
+    border: 1px solid;
+    padding: 0.2em 1em;
+    text-decoration: none;
+    background-color: #f9f9f9;
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+
+    &:hover {
+      background-color: #eee;
+    }
   `;
   const footerClass = css`
     margin-top: auto;
@@ -39,13 +58,16 @@ const HomePage: FC = ({ advice }) => {
   return (
     <Layout title={title}>
       <main class={mainClass}>
-        <h2>{title}</h2>
+        <h2 class={titleClass}>{title}</h2>
         <blockquote class={quoteClass}>
           {adv.advice}
           <p class={sourceClass}>
             Source: <a href={adv.source}>{adv.source}</a>
           </p>
         </blockquote>
+        <a class={linkClass} href='.'>
+          Random
+        </a>
         <p class={footerClass}>
           Also available as an <a href='/api'>API</a>
         </p>
