@@ -4,9 +4,12 @@ import { css } from 'hono/css';
 
 const ApiPage: FC = ({ maxAdvice }) => {
   const title = "API for Kevin Kelly's Unsolicited Advice";
+  const codeBlockClass = css`
+    background-color: var(--bg-shade);
+    padding: 1em;
+  `;
   const codeClass = css`
     display: block;
-    font-size: 0.9rem;
   `;
   return (
     <Layout title={title}>
@@ -29,14 +32,17 @@ const ApiPage: FC = ({ maxAdvice }) => {
           <a href='/api/advice/7'>/api/advice/7</a> will return the following
           JSON:
         </p>
-        <code class={codeClass}>"id": 7,</code>
-        <code class={codeClass}>
-          "advice": "Gratitude will unlock all other virtues and is something
-          you can get better at.",
-        </code>
-        <code class={codeClass}>
-          "source": "https://kk.org/thetechnium/68-bits-of-unsolicited-advice/"
-        </code>
+        <div class={codeBlockClass}>
+          <code class={codeClass}>"id": 7,</code>
+          <code class={codeClass}>
+            "advice": "Gratitude will unlock all other virtues and is something
+            you can get better at.",
+          </code>
+          <code class={codeClass}>
+            "source":
+            "https://kk.org/thetechnium/68-bits-of-unsolicited-advice/"
+          </code>
+        </div>
         <p>
           <a href='/'>Home</a>
         </p>

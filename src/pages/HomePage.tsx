@@ -16,38 +16,40 @@ const HomePage: FC = ({ advice }) => {
     text-wrap: balance;
   `;
   const sourceClass = css`
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: end;
     word-break: break-word;
   `;
   const linkClass = css`
     margin: 1em auto;
-    border: 1px solid;
+    border: 1px solid var(--main-color);
     padding: 0.2em 1em;
     text-decoration: none;
-    background-color: #f9f9f9;
-    color: black;
+    background-color: var(--bg-shade);
+    color: var(--main-color) !important; // overwrites media query for dark mode
     border-radius: 5px;
     text-align: center;
+    user-select: none;
 
     &:hover {
-      background-color: #eee;
+      background-color: var(--color-shade);
     }
   `;
   const footerClass = css`
     margin-top: auto;
-    font-size: 1rem;
+    padding: 0.5em 0;
+    font-size: 0.8rem;
     text-align: center;
   `;
   const quoteClass = css`
-    background: #f9f9f9;
-    border-left: 0.5rem solid #ccc;
+    background-color: var(--bg-shade);
+    border-left: 0.5rem solid var(--color-shade);
     margin: 0.5em;
     padding: 0.5em;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 
     &:before {
-      color: #ccc;
+      color: var(--color-shade);
       content: open-quote;
       font-size: 3em;
       line-height: 0.1em;
