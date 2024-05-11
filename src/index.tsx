@@ -3,8 +3,12 @@ import { Hono } from 'hono';
 import { advice } from './advice.js';
 import HomePage from './pages/HomePage.js';
 import api from './api.js';
+import { serveStatic } from '@hono/node-server/serve-static';
 
 const app = new Hono();
+
+app.use('/static/*', serveStatic({ root: './' }));
+
 app.route('/api', api);
 
 app.get('/', (c) => {
